@@ -21,10 +21,10 @@
 ## Changes
 
 ### DB
-added seckill\src\main\sql\seckill_20171107.sql
+added `seckill\src\main\sql\seckill_20171107.sql`
 
 ### Spring
-modified seckill\src\main\resources\spring\spring-dao.xml
+modified `seckill\src\main\resources\spring\spring-dao.xml`
 ```
 	<!--<context:property-placeholder location="classpath:jdbc.properties"/>-->
     <!--java.sql.SQLException: Access denied for user 'Administrator'@'localhost-->
@@ -32,6 +32,9 @@ modified seckill\src\main\resources\spring\spring-dao.xml
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 ```
+
+### Test
+added exportSeckillUrl() for `seckill\src\test\java\cn\codingxiaxw\service\SeckillServiceTest.java`
 
 ## Tips
 
