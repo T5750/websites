@@ -41,4 +41,5 @@ added exportSeckillUrl() for `seckill\src\test\java\cn\codingxiaxw\service\Secki
 - Commits on Jul 18, 2017
 
 ## Links
-[seckill](https://github.com/codingXiaxw/seckill)
+- [seckill](https://github.com/codingXiaxw/seckill)
+- [Java高并发秒杀API之高并发优化](http://www.imooc.com/learn/632)
