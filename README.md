@@ -44,6 +44,4 @@
 - [HTML色彩代码](http://html-color-codes.info/chinese/)
 - [在线API文档](http://tool.oschina.net/apidocs) - 提供在线 Java API文档, 在线 PHP API文档, 在线 Node.js API文档等其他在线工具
 
-<center>
 ![doge](http://www.wailian.work/images/2018/02/22/doge-60-min.png)
-</center>
