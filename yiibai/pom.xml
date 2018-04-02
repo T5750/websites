@@ -3,25 +3,16 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.evangel</groupId>
+	<parent>
+		<artifactId>websites</artifactId>
+		<groupId>com.evangel</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 	<artifactId>yiibai</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
 	<modules>
 		<module>netty</module>
 	</modules>
-	<packaging>pom</packaging>
 
-	<build>
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
