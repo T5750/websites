@@ -1,18 +1,13 @@
 package org.easypr.test;
 
 import static org.bytedeco.javacpp.opencv_highgui.imread;
-import static org.easypr.core.CoreFunc.getPlateType;
-import static org.easypr.core.CoreFunc.projectedHistogram;
-import static org.easypr.core.CoreFunc.showImage;
+import static org.easypr.core.CoreFunc.*;
 
 import java.util.Vector;
 
 import org.bytedeco.javacpp.opencv_core.Mat;
-import org.easypr.core.CharsIdentify;
-import org.easypr.core.CharsRecognise;
-import org.easypr.core.CoreFunc;
-import org.easypr.core.PlateDetect;
-import org.easypr.core.PlateLocate;
+import org.easypr.core.*;
+import org.easypr.util.Globals;
 import org.junit.Test;
 
 /**
@@ -24,8 +19,8 @@ public class EasyPrTest {
     @Test
     public void testPlateRecognise() {
         //String imgPath = "res/image/test_image/test.jpg";
-        String imgPath = "res/image/test_image/plate_recognize.jpg";
-
+		String imgPath = "res/image/test_image/plate_recognize.jpg";
+		imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
         PlateDetect plateDetect = new PlateDetect();
         plateDetect.setPDLifemode(true);
@@ -43,7 +38,7 @@ public class EasyPrTest {
     @Test
     public void testPlateDetect() {
         String imgPath = "res/image/test_image/test.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
         PlateDetect plateDetect = new PlateDetect();
         plateDetect.setPDLifemode(true);
@@ -58,7 +53,7 @@ public class EasyPrTest {
     @Test
     public void testPlateLocate() {
         String imgPath = "res/image/test_image/test.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
 
         PlateLocate plate = new PlateLocate();
@@ -78,7 +73,7 @@ public class EasyPrTest {
     @Test
     public void testCharsRecognise() {
         String imgPath = "res/image/test_image/chars_recognise_huAGH092.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
         CharsRecognise cr = new CharsRecognise();
         cr.setCRDebug(true);
@@ -89,7 +84,7 @@ public class EasyPrTest {
     @Test
     public void testColorDetect() {
         String imgPath = "res/image/test_image/core_func_yellow.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
 
         CoreFunc.Color color = getPlateType(src, true);
@@ -99,7 +94,7 @@ public class EasyPrTest {
     @Test
     public void testProjectedHistogram() {
         String imgPath = "res/image/test_image/chars_identify_E.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
         projectedHistogram(src, CoreFunc.Direction.HORIZONTAL);
     }
@@ -107,7 +102,7 @@ public class EasyPrTest {
     @Test
     public void testCharsIdentify() {
         String imgPath = "res/image/test_image/chars_identify_E.jpg";
-
+        imgPath = Globals.convertPath(imgPath);
         Mat src = imread(imgPath);
         CharsIdentify charsIdentify = new CharsIdentify();
         String result = charsIdentify.charsIdentify(src, false, true);

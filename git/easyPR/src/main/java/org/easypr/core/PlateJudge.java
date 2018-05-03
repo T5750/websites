@@ -9,6 +9,7 @@ import org.bytedeco.javacpp.opencv_core.Mat;
 import org.bytedeco.javacpp.opencv_core.Rect;
 import org.bytedeco.javacpp.opencv_core.Size;
 import org.bytedeco.javacpp.opencv_ml.CvSVM;
+import org.easypr.util.Globals;
 
 /**
  * @author Created by fanwenjie
@@ -97,5 +98,6 @@ public class PlateJudge {
     /**
      * 模型存储路径
      */
-    private String path = "res/model/svm.xml";
+	// private String path = "res/model/svm.xml";
+	private String path = Globals.convertPath("res/model/svm.xml");
 }

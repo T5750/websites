@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.bytedeco.javacpp.opencv_core.Mat;
 import org.bytedeco.javacpp.opencv_ml.CvANN_MLP;
+import org.easypr.util.Globals;
 import org.easypr.util.Convert;
 
 /**
@@ -120,7 +121,8 @@ public class CharsIdentify {
 
     private CvANN_MLP ann = new CvANN_MLP();
 
-    private String path = "res/model/ann.xml";
+	// private String path = "res/model/ann.xml";
+	private String path = Globals.convertPath("res/model/ann.xml");
 
     private int predictSize = 10;
 
