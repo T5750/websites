@@ -14,6 +14,7 @@
 	<modules>
 		<module>smart-new</module>
 		<module>jfreechart-dev-guide</module>
+		<module>easyPR</module>
 	</modules>
 
 </project>
