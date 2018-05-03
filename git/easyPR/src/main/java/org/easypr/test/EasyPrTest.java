@@ -15,98 +15,90 @@ import org.junit.Test;
  * 
  */
 public class EasyPrTest {
-    
-    @Test
-    public void testPlateRecognise() {
-        //String imgPath = "res/image/test_image/test.jpg";
+	@Test
+	public void testPlateRecognise() {
+		// String imgPath = "res/image/test_image/test.jpg";
 		String imgPath = "res/image/test_image/plate_recognize.jpg";
 		imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-        PlateDetect plateDetect = new PlateDetect();
-        plateDetect.setPDLifemode(true);
-        Vector<Mat> matVector = new Vector<Mat>();
-        if (0 == plateDetect.plateDetect(src, matVector)) {
-            CharsRecognise cr = new CharsRecognise();
-            
-            for (int i = 0; i < matVector.size(); ++i) {
-                String result = cr.charsRecognise(matVector.get(i));
-                System.out.println("Chars Recognised: " + result);
-            }
-        }
-    }
+		Mat src = imread(imgPath);
+		PlateDetect plateDetect = new PlateDetect();
+		plateDetect.setPDLifemode(true);
+		Vector<Mat> matVector = new Vector<Mat>();
+		if (0 == plateDetect.plateDetect(src, matVector)) {
+			CharsRecognise cr = new CharsRecognise();
+			for (int i = 0; i < matVector.size(); ++i) {
+				String result = cr.charsRecognise(matVector.get(i));
+				System.out.println("Chars Recognised: " + result);
+			}
+		}
+	}
 
-    @Test
-    public void testPlateDetect() {
-        String imgPath = "res/image/test_image/test.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-        PlateDetect plateDetect = new PlateDetect();
-        plateDetect.setPDLifemode(true);
-        Vector<Mat> matVector = new Vector<Mat>();
-        if (0 == plateDetect.plateDetect(src, matVector)) {
-            for (int i = 0; i < matVector.size(); ++i) {
-                showImage("Plate Detected", matVector.get(i));
-            }
-        }
-    }
+	@Test
+	public void testPlateDetect() {
+		String imgPath = "res/image/test_image/test.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		PlateDetect plateDetect = new PlateDetect();
+		plateDetect.setPDLifemode(true);
+		Vector<Mat> matVector = new Vector<Mat>();
+		if (0 == plateDetect.plateDetect(src, matVector)) {
+			for (int i = 0; i < matVector.size(); ++i) {
+				showImage("Plate Detected", matVector.get(i));
+			}
+		}
+	}
 
-    @Test
-    public void testPlateLocate() {
-        String imgPath = "res/image/test_image/test.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
+	@Test
+	public void testPlateLocate() {
+		String imgPath = "res/image/test_image/test.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		PlateLocate plate = new PlateLocate();
+		plate.setDebug(true);
+		plate.setLifemode(true);
+		Vector<Mat> resultVec = plate.plateLocate(src);
+		int num = resultVec.size();
+		for (int j = 0; j < num; j++) {
+			// showImage("Plate Located " + j, resultVec.get(j));
+		}
+		return;
+	}
 
-        PlateLocate plate = new PlateLocate();
-        plate.setDebug(true);
-        plate.setLifemode(true);
+	@Test
+	public void testCharsRecognise() {
+		String imgPath = "res/image/test_image/chars_recognise_huAGH092.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		CharsRecognise cr = new CharsRecognise();
+		cr.setCRDebug(true);
+		String result = cr.charsRecognise(src);
+		System.out.println("Chars Recognised: " + result);
+	}
 
-        Vector<Mat> resultVec = plate.plateLocate(src);
+	@Test
+	public void testColorDetect() {
+		String imgPath = "res/image/test_image/core_func_yellow.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		CoreFunc.Color color = getPlateType(src, true);
+		System.out.println("Color Deteted: " + color);
+	}
 
-        int num = resultVec.size();
-        for (int j = 0; j < num; j++) {
-            // showImage("Plate Located " + j, resultVec.get(j));
-        }
+	@Test
+	public void testProjectedHistogram() {
+		String imgPath = "res/image/test_image/chars_identify_E.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		projectedHistogram(src, CoreFunc.Direction.HORIZONTAL);
+	}
 
-        return;
-    }
-
-    @Test
-    public void testCharsRecognise() {
-        String imgPath = "res/image/test_image/chars_recognise_huAGH092.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-        CharsRecognise cr = new CharsRecognise();
-        cr.setCRDebug(true);
-        String result = cr.charsRecognise(src);
-        System.out.println("Chars Recognised: " + result);
-    }
-
-    @Test
-    public void testColorDetect() {
-        String imgPath = "res/image/test_image/core_func_yellow.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-
-        CoreFunc.Color color = getPlateType(src, true);
-        System.out.println("Color Deteted: " + color);
-    }
-
-    @Test
-    public void testProjectedHistogram() {
-        String imgPath = "res/image/test_image/chars_identify_E.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-        projectedHistogram(src, CoreFunc.Direction.HORIZONTAL);
-    }
-
-    @Test
-    public void testCharsIdentify() {
-        String imgPath = "res/image/test_image/chars_identify_E.jpg";
-        imgPath = Globals.convertPath(imgPath);
-        Mat src = imread(imgPath);
-        CharsIdentify charsIdentify = new CharsIdentify();
-        String result = charsIdentify.charsIdentify(src, false, true);
-        System.out.println(result);
-    }
-
+	@Test
+	public void testCharsIdentify() {
+		String imgPath = "res/image/test_image/chars_identify_E.jpg";
+		imgPath = Globals.convertPath(imgPath);
+		Mat src = imread(imgPath);
+		CharsIdentify charsIdentify = new CharsIdentify();
+		String result = charsIdentify.charsIdentify(src, false, true);
+		System.out.println(result);
+	}
 }
