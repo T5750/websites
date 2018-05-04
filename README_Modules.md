@@ -8,10 +8,11 @@ websites/
 │    └── [v0.1.1] qrcode
 ├── [v0.2] git
 │    ├── smart-new
-│    └── [v0.4] jfreechart-dev-guide
+│    ├── [v0.2.1] jfreechart-dev-guide
+│    └── [v0.2.2] easyPR
 ├── [v0.3] java1234
 │    └── jfreechart
-└── [v0.5] yiibai
+└── [v0.4] yiibai
      └── netty
 ```
 
