@@ -27,20 +27,20 @@ renren-security
 │    │    ├─oss 文件存储
 │    │    └─sys 系统管理(核心)
 │    └─resources 
-│        ├─mapper   MyBatis文件
-│        ├─statics  静态资源
-│        ├─template 系统页面
-│        │    ├─modules      模块页面
-│        │    ├─index.html   AdminLTE主题风格（默认主题）
-│        │    └─index1.html  Layui主题风格
-│        └─application.yml   全局配置文件
+│         ├─mapper   MyBatis文件
+│         ├─statics  静态资源
+│         ├─template 系统页面
+│         │    ├─modules      模块页面
+│         │    ├─index.html   AdminLTE主题风格（默认主题）
+│         │    └─index1.html  Layui主题风格
+│         └─application.yml   全局配置文件
 ├─renren-api        API服务
 └─renren-generator  代码生成器
-         └─resources 
-            ├─mapper   MyBatis文件
-            ├─template 代码生成器模板（可增加或修改相应模板）
-            ├─application.yml    全局配置文件
-            └─generator.properties   代码生成器，配置文件
+          └─resources 
+               ├─mapper   MyBatis文件
+               ├─template 代码生成器模板（可增加或修改相应模板）
+               ├─application.yml    全局配置文件
+               └─generator.properties   代码生成器，配置文件
 ```
 
 ## How to play
