@@ -15,6 +15,7 @@
 		<module>smart-new</module>
 		<module>jfreechart-dev-guide</module>
 		<module>easyPR</module>
+		<module>renren-security-new</module>
 	</modules>
 
 </project>
