@@ -20,15 +20,12 @@
 ```
 renren-security
 ├─renren-common     公共模块
-│ 
 ├─renren-admin      管理后台
 │    ├─db  数据库SQL脚本
-│    │ 
 │    ├─modules  模块
 │    │    ├─job 定时任务
 │    │    ├─oss 文件存储
 │    │    └─sys 系统管理(核心)
-│    │ 
 │    └─resources 
 │        ├─mapper   MyBatis文件
 │        ├─statics  静态资源
@@ -37,19 +34,17 @@ renren-security
 │        │    ├─index.html   AdminLTE主题风格（默认主题）
 │        │    └─index1.html  Layui主题风格
 │        └─application.yml   全局配置文件
-│       
 ├─renren-api        API服务
-│ 
-├─renren-generator  代码生成器
-│        └─resources 
-│           ├─mapper   MyBatis文件
-│           ├─template 代码生成器模板（可增加或修改相应模板）
-│           ├─application.yml    全局配置文件
-│           └─generator.properties   代码生成器，配置文件
+└─renren-generator  代码生成器
+         └─resources 
+            ├─mapper   MyBatis文件
+            ├─template 代码生成器模板（可增加或修改相应模板）
+            ├─application.yml    全局配置文件
+            └─generator.properties   代码生成器，配置文件
 ```
 
 ## How to play
-- 创建数据库renren_security，数据库编码为UTF-8
+- 创建数据库renren_security，编码为UTF-8
 - 执行`db/mysql.sql`文件，初始化数据【按需导入表结构及数据】
 - 修改`application-dev.yml`文件，更新MySQL账号和密码
 - 在renren-security目录下，执行mvn clean install
