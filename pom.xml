@@ -13,6 +13,7 @@
 		<module>imooc</module>
 		<module>java1234</module>
 		<module>yiibai</module>
+		<module>apache</module>
 	</modules>
 
 	<properties>
