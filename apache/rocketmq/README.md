@@ -5,6 +5,8 @@
 - [RocketMQ 3.2.6](https://github.com/apache/rocketmq)
 
 ## How to play
+### RocketMQ Architecture
+![rmq-basic-arc](https://rocketmq.apache.org/assets/images/rmq-basic-arc.png)
 
 ### Windows
 进入`alibaba-rocketmq\bin`目录
@@ -17,6 +19,8 @@
 - 初赛的DEMO，并解压```git clone https://code.aliyun.com/MiddlewareRace/PreliminaryDemo.git```
 	- `Producer`
 	- `Consumer`
+	- ```java -Drocketmq.namesrv.addr=127.0.0.1:9876 -cp preliminary.demo-1.0-SNAPSHOT.jar com.alibaba.middleware.race.rocketmq.Producer```
+	- ```java -Drocketmq.namesrv.addr=127.0.0.1:9876 -cp preliminary.demo-1.0-SNAPSHOT.jar com.alibaba.middleware.race.rocketmq.Consumer```
 
 ## Results
 ![rocketmq](http://www.wailian.work/images/2018/06/05/rocketmq.png)
