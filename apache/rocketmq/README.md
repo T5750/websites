@@ -22,8 +22,41 @@
 	- ```java -Drocketmq.namesrv.addr=127.0.0.1:9876 -cp preliminary.demo-1.0-SNAPSHOT.jar com.alibaba.middleware.race.rocketmq.Producer```
 	- ```java -Drocketmq.namesrv.addr=127.0.0.1:9876 -cp preliminary.demo-1.0-SNAPSHOT.jar com.alibaba.middleware.race.rocketmq.Consumer```
 
+## rocketmq-console
+### DOCKER 安装
+1、获取 Docker 镜像
+```
+docker pull styletang/rocketmq-console-ng
+```
+2、运行，注意将你自己的 NameServer 地址替换下面的 127.0.0.1
+```
+docker run -e "JAVA_OPTS=-Drocketmq.namesrv.addr=127.0.0.1:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" -p 8080:8080 -t styletang/rocketmq-console-ng
+```
+### 非 DOCKER 安装
+我们 git clone 一份代码到本地：
+```
+git clone https://github.com/apache/rocketmq-externals.git
+
+cd rocketmq-externals/rocketmq-console/
+```
+需要 jdk 1.7 以上。 执行以下命令：
+```
+mvn spring-boot:run
+```
+或者
+```
+mvn clean package -Dmaven.test.skip=true
+
+java -jar target/rocketmq-console-ng-1.0.0.jar
+```
+注意：
+- 如果你使用的 RocketMQ 版本小于 3.5.8，如果您使用 rocketmq < 3.5.8，请在启动 rocketmq-console-ng 时添加 `-Dcom.rocketmq.sendMessageWithVIPChannel=false`（或者您可以在 ops 页面中更改它）
+- 更改 `resource/application.properties` 中的 `rocketmq.config.namesrvAddr`（或者可以在ops页面中更改它）
+
 ## Results
 ![rocketmq](http://www.wailian.work/images/2018/06/05/rocketmq.png)
+![rocketmq-console](http://www.wailian.work/images/2018/06/06/rocketmq-console-min.jpg)
 
 ## Links
 - [在Windows下搭建RocketMQ](https://blog.csdn.net/u014134180/article/details/51790988)
+- [SpringBoot RocketMQ 整合使用和监控](http://www.54tianzhisheng.cn/2018/02/07/SpringBoot-RocketMQ/)
