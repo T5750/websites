@@ -25,6 +25,12 @@
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-common</artifactId>
 			<version>${rocketmq.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>io.netty</groupId>
+					<artifactId>netty-tcnative</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.openmessaging</groupId>
