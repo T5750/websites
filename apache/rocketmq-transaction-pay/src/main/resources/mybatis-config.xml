@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 配置全局性 cache 的 ( 开 / 关) default:true -->
+		<setting name="cacheEnabled" value="true" />
+		<!-- [是否 启用 数据中 A_column 自动映射 到 java类中驼峰命名的属性 default:fasle] -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 
+		是否使用 懒加载 关联对象 同 hibernate中的延迟加载 一样 default:true
+		<setting name="lazyLoadingEnabled" value="true" />
+		[当对象使用延迟加载时 属性的加载取决于能被引用到的那些延迟属性,否则,按需加载(需要的是时候才去加载)]
+		<setting name="aggressiveLazyLoading" value="true" />
+		是否允许单条sql 返回多个数据集 (取决于驱动的兼容性) default:true
+		<setting name="multipleResultSetsEnabled" value="true" />
+		是否可以使用列的别名 (取决于驱动的兼容性) default:true
+		<setting name="useColumnLabel" value="true" />
+		允许JDBC 生成主键。需要驱动器支持。如果设为了true，这个设置将强制使用被生成的主键，有一些驱动器不兼容不过仍然可以执行。 default:false
+		<setting name="useGeneratedKeys" value="false" />
+		指定 MyBatis 如何自动映射 数据基表的列 NONE：不隐射 PARTIAL:部分 FULL:全部
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+		这是默认的执行类型 SIMPLE :简单 REUSE:执行器可能重复使用prepared statements 语句 BATCH:执行器可以重复执行语句和批量更新
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		设置驱动等待数据响应的超时数 默认没有设置
+		<setting name="defaultStatementTimeout" value="25000" />
+		[是否启用 行内嵌套语句 defaut:false]
+		<setting name="safeRowBoundsEnabled" value="false" />
+		设置本地缓存范围 session:就会有数据的共享 statement:语句范围 (这样就不会有数据的共享 ) defalut:session
+		<setting name="localCacheScope" value="SESSION" />
+		设置但JDBC类型为空时,某些驱动程序 要指定值,default:other
+		<setting name="jdbcTypeForNull" value="OTHER" />
+		设置触发延迟加载的方法
+		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+		-->
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.evangel.entity.Pay" alias="Pay"/>
+	</typeAliases>
+    <plugins>  
+        <plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">  
+          <property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect"/>  
+        </plugin>  
+    </plugins> 	 
+
+</configuration>

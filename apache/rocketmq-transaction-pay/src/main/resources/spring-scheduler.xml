@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<task:annotation-driven executor="executor" scheduler="scheduler"/>
+
+	<task:scheduler id="scheduler" pool-size="10"/>
+
+	<!-- 
+		定时器配置 
+	    task:executor/@pool-size：可以指定执行线程池的初始大小、最大大小
+	    task:executor/@queue-capacity：等待执行的任务队列的容量 
+	    task:executor/@rejection-policy：当等待队已满时的策略，分为丢弃、由任务执行器直接运行等方式 
+	    
+	    @scheduler配置：
+		//initialDelay :  表示第一次运行前需要延迟的时间，单位是毫秒
+		//fixedDelay   :  表示从上一个任务完成到下一个任务开始的间隔, 单位是毫秒
+		//fixedRate    :  表示从上一个任务开始到下一个任务开始的间隔, 单位是毫秒（如果某次任务开始时上次任务还没有结束，那么在上次任务执行完成时，当前任务会立即执行）
+    -->
+	<task:executor id="executor" pool-size="100-200" queue-capacity="1000"/>
+
+</beans>

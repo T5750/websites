@@ -15,6 +15,7 @@
 		<module>rocketmq</module>
 		<module>rocketmq4</module>
 		<module>rocketmq-transaction-balance</module>
+		<module>rocketmq-transaction-pay</module>
 	</modules>
 
 
