@@ -11,6 +11,13 @@ public class Globals {
 	public static final String PRODUCER_GROUP = "ProducerGroup" + MQ_ENTITY;
 	public static final String TAGS = "Tag" + MQ_ENTITY;
 	public static final String KEYS = "Key" + MQ_ENTITY;
+	/**
+	 * for rocketmq-transaction-pay
+	 */
+	public static final String MQ_ENTITY_PAY = "Pay";
+	public static final String TOPIC_PAY = "Topic" + MQ_ENTITY_PAY;
+	public static final String PRODUCER_GROUP_PAY = "ProducerGroup"
+			+ MQ_ENTITY_PAY;
 
 	public static DefaultMQProducer setNamesrvAddr(DefaultMQProducer producer) {
 		producer.setNamesrvAddr(MQ_ADDRESS);

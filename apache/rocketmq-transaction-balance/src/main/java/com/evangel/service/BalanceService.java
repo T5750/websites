@@ -38,8 +38,4 @@ public class BalanceService {
 		balance.setUpdateTime(new Date());
 		this.updateByPrimaryKey(balance);
 	}
-
-	public int insertSelective(Balance record) {
-		return this.balanceMapper.insertSelective(record);
-	}
 }
