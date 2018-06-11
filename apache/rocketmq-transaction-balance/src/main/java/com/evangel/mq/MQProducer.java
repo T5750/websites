@@ -49,7 +49,7 @@ public class MQProducer {
 		producer = Globals.setNamesrvAddr(producer);
 		producer.start();
 		String balance_mode = "";
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
 			try {
 				if (i % 2 == 0) {
 					balance_mode = "IN";

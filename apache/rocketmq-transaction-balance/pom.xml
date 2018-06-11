@@ -167,6 +167,25 @@
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-common</artifactId>
 			<version>${rocketmq.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>io.netty</groupId>
+					<artifactId>netty-tcnative</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<resources>
+			<!--指定xml文件位置-->
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+	</build>
 </project>
