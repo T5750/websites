@@ -1,4 +1,4 @@
-package com.evangel.multiTopic;
+package com.evangel.multitopic;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import com.alibaba.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.common.message.MessageExt;
-import com.evangel.multiTopic.util.Globals;
+import com.evangel.multitopic.util.Globals;
 
 public class PushConsumer {
 	/**

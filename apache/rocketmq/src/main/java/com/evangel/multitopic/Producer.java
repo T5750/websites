@@ -1,4 +1,4 @@
-package com.evangel.multiTopic;
+package com.evangel.multitopic;
 
 import java.util.concurrent.TimeUnit;
 
@@ -6,7 +6,7 @@ import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.client.producer.SendResult;
 import com.alibaba.rocketmq.common.message.Message;
-import com.evangel.multiTopic.util.Globals;
+import com.evangel.multitopic.util.Globals;
 
 public class Producer {
 	public static void main(String[] args) throws MQClientException,

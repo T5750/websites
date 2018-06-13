@@ -1,4 +1,4 @@
-package com.evangel.multiTopic.util;
+package com.evangel.multitopic.util;
 
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
