@@ -72,3 +72,4 @@ rocketmq.config.isVIPChannel=false
 - [在Windows下搭建RocketMQ](https://blog.csdn.net/u014134180/article/details/51790988)
 - [SpringBoot RocketMQ 整合使用和监控](http://www.54tianzhisheng.cn/2018/02/07/SpringBoot-RocketMQ/)
 - [Quick Start](https://rocketmq.apache.org/docs/quick-start/)
+- [RocketMQ：一个纯java的开源消息中间件--开发测试环境搭建](https://my.oschina.net/cloudcoder/blog/200741)
