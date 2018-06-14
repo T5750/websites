@@ -10,14 +10,14 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerOrderly;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class OrderedConsumer {
 	public static void main(String[] args) throws Exception {
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(
-				ExampleUtil.PRODUCER_GROUP);
+				Globals.PRODUCER_GROUP);
 		consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
-		consumer = ExampleUtil.setNamesrvAddr(consumer);
+		consumer = Globals.setNamesrvAddr(consumer);
 		consumer.subscribe("TopicTestOrderedProducer", "TagA || TagC || TagD");
 		consumer.registerMessageListener(new MessageListenerOrderly() {
 			AtomicLong consumeTimes = new AtomicLong(0);

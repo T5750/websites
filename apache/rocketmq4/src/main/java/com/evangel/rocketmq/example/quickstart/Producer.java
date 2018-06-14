@@ -21,7 +21,7 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 /**
  * This class demonstrates how to send messages to brokers using provided
@@ -34,7 +34,7 @@ public class Producer {
 		 * Instantiate with a producer group name.
 		 */
 		DefaultMQProducer producer = new DefaultMQProducer(
-				ExampleUtil.PRODUCER_GROUP);
+				Globals.PRODUCER_GROUP);
 		/*
 		 * Specify name server addresses. <p/>
 		 * 
@@ -46,7 +46,7 @@ public class Producer {
 		/*
 		 * Launch the instance.
 		 */
-		producer = ExampleUtil.setNamesrvAddr(producer);
+		producer = Globals.setNamesrvAddr(producer);
 		producer.start();
 		for (int i = 0; i < 1000; i++) {
 			try {
@@ -54,13 +54,13 @@ public class Producer {
 				 * Create a message instance, specifying topic, tag and message
 				 * body.
 				 */
-				Message msg = new Message(ExampleUtil.TOPIC /* Topic */,
+				Message msg = new Message(Globals.TOPIC /* Topic */,
 						"TagAProducer" /* Tag */,
 						("Hello RocketMQ " + i)
-								.getBytes(ExampleUtil.DEFAULT_CHARSET) /*
-																		 * Message
-																		 * body
-																		 */
+								.getBytes(Globals.DEFAULT_CHARSET) /*
+																	 * Message
+																	 * body
+																	 */
 				);
 				/*
 				 * Call send message to deliver message to one of brokers.

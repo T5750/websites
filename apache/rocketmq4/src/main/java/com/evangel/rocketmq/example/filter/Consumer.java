@@ -28,20 +28,20 @@ import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.MixAll;
 import org.apache.rocketmq.common.message.MessageExt;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class Consumer {
 	public static void main(String[] args) throws InterruptedException,
 			MQClientException, IOException {
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(
-				ExampleUtil.CONSUMER_GROUP);
+				Globals.CONSUMER_GROUP);
 		ClassLoader classLoader = Thread.currentThread()
 				.getContextClassLoader();
 		File classFile = new File(classLoader.getResource(
 				"MessageFilterImpl.java").getFile());
 		String filterCode = MixAll.file2String(classFile);
-		consumer = ExampleUtil.setNamesrvAddr(consumer);
-		consumer.subscribe(ExampleUtil.TOPIC,
+		consumer = Globals.setNamesrvAddr(consumer);
+		consumer.subscribe(Globals.TOPIC,
 				"org.apache.rocketmq.example.filter.MessageFilterImpl",
 				filterCode);
 		consumer.registerMessageListener(new MessageListenerConcurrently() {

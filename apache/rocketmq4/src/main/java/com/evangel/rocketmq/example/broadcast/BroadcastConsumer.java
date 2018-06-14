@@ -10,17 +10,17 @@ import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.common.protocol.heartbeat.MessageModel;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class BroadcastConsumer {
 	public static void main(String[] args) throws Exception {
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(
-				ExampleUtil.PRODUCER_GROUP);
+				Globals.PRODUCER_GROUP);
 		consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
 		// set to broadcast mode
 		consumer.setMessageModel(MessageModel.BROADCASTING);
-		consumer = ExampleUtil.setNamesrvAddr(consumer);
-		consumer.subscribe(ExampleUtil.TOPIC, "TagA || TagC || TagD");
+		consumer = Globals.setNamesrvAddr(consumer);
+		consumer.subscribe(Globals.TOPIC, "TagA || TagC || TagD");
 		consumer.registerMessageListener(new MessageListenerConcurrently() {
 			@Override
 			public ConsumeConcurrentlyStatus consumeMessage(

@@ -8,16 +8,16 @@ import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.message.MessageExt;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class ScheduledMessageConsumer {
 	public static void main(String[] args) throws Exception {
 		// Instantiate message consumer
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(
-				ExampleUtil.CONSUMER_GROUP);
+				Globals.CONSUMER_GROUP);
 		// Subscribe topics
-		consumer = ExampleUtil.setNamesrvAddr(consumer);
-		consumer.subscribe(ExampleUtil.TOPIC, "*");
+		consumer = Globals.setNamesrvAddr(consumer);
+		consumer.subscribe(Globals.TOPIC, "*");
 		// Register message listener
 		consumer.registerMessageListener(new MessageListenerConcurrently() {
 			@Override

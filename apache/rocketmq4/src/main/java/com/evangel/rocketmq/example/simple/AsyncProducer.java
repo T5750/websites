@@ -5,23 +5,23 @@ import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class AsyncProducer {
 	public static void main(String[] args) throws Exception {
 		// Instantiate with a producer group name.
 		DefaultMQProducer producer = new DefaultMQProducer(
-				ExampleUtil.PRODUCER_GROUP);
+				Globals.PRODUCER_GROUP);
 		// Launch the instance.
-		producer = ExampleUtil.setNamesrvAddr(producer);
+		producer = Globals.setNamesrvAddr(producer);
 		producer.start();
 		producer.setRetryTimesWhenSendAsyncFailed(0);
 		for (int i = 0; i < 100; i++) {
 			final int index = i;
 			// Create a message instance, specifying topic, tag and message
 			// body.
-			Message msg = new Message(ExampleUtil.TOPIC, "TagA", "OrderID188",
-					"Hello world".getBytes(ExampleUtil.DEFAULT_CHARSET));
+			Message msg = new Message(Globals.TOPIC, "TagA", "OrderID188",
+					"Hello world".getBytes(Globals.DEFAULT_CHARSET));
 			producer.send(msg, new SendCallback() {
 				@Override
 				public void onSuccess(SendResult sendResult) {

@@ -21,19 +21,19 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 public class Producer {
 	public static void main(String[] args) throws MQClientException,
 			InterruptedException {
 		DefaultMQProducer producer = new DefaultMQProducer(
-				ExampleUtil.PRODUCER_GROUP);
-		producer = ExampleUtil.setNamesrvAddr(producer);
+				Globals.PRODUCER_GROUP);
+		producer = Globals.setNamesrvAddr(producer);
 		producer.start();
 		try {
 			for (int i = 0; i < 6000000; i++) {
 				Message msg = new Message("TopicFilter7", "TagA", "OrderID001",
-						"Hello world".getBytes(ExampleUtil.DEFAULT_CHARSET));
+						"Hello world".getBytes(Globals.DEFAULT_CHARSET));
 				msg.putUserProperty("SequenceId", String.valueOf(i));
 				SendResult sendResult = producer.send(msg);
 				System.out.printf("%s%n", sendResult);

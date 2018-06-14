@@ -26,7 +26,7 @@ import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.apache.rocketmq.common.message.MessageExt;
 
-import com.evangel.rocketmq.example.util.ExampleUtil;
+import com.evangel.rocketmq.example.util.Globals;
 
 /**
  * This example shows how to subscribe and consume messages using providing
@@ -39,7 +39,7 @@ public class Consumer {
 		 * Instantiate with specified consumer group name.
 		 */
 		DefaultMQPushConsumer consumer = new DefaultMQPushConsumer(
-				ExampleUtil.PRODUCER_GROUP);
+				Globals.PRODUCER_GROUP);
 		/*
 		 * Specify name server addresses. <p/>
 		 * 
@@ -56,8 +56,8 @@ public class Consumer {
 		/*
 		 * Subscribe one more more topics to consume.
 		 */
-		consumer = ExampleUtil.setNamesrvAddr(consumer);
-		consumer.subscribe(ExampleUtil.TOPIC, "*");
+		consumer = Globals.setNamesrvAddr(consumer);
+		consumer.subscribe(Globals.TOPIC, "*");
 		/*
 		 * Register callback to execute on arrival of messages fetched from
 		 * brokers.
