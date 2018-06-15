@@ -29,6 +29,9 @@ import org.apache.rocketmq.common.message.MessageExt;
 
 import com.evangel.rocketmq.example.util.Globals;
 
+/**
+ * args: -f true -g ProducerGroupCommandLine -s * -t TopicCommandLine
+ */
 public class Consumer {
 	public static void main(String[] args) throws InterruptedException,
 			MQClientException {

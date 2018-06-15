@@ -25,6 +25,10 @@ import org.apache.rocketmq.remoting.common.RemotingHelper;
 
 import com.evangel.rocketmq.example.util.Globals;
 
+/**
+ * args: -a TagCommandLine -c 10 -g ProducerGroupCommandLine -k KeyCommandLine
+ * -t TopicCommandLine
+ */
 public class Producer {
 	public static void main(String[] args) throws MQClientException,
 			InterruptedException {
@@ -51,7 +55,7 @@ public class Producer {
 					Thread.sleep(1000);
 				}
 			}
-			producer.shutdown();
+			// producer.shutdown();
 		}
 	}
 
