@@ -16,6 +16,7 @@ public class Globals {
 	public static final String PRODUCER_GROUP_SQL = "ProducerGroupSql";
 	public static final String CONSUMER_GROUP_SQL = "ConsumerGroupSql";
 	public static final String TOPIC_SQL = "TopicSql";
+	public static final String TOPIC_BENCHMARK = "TopicBenchmark";
 
 	public static DefaultMQProducer setNamesrvAddr(DefaultMQProducer producer) {
 		producer.setNamesrvAddr(NAMESRV_ADDR);
