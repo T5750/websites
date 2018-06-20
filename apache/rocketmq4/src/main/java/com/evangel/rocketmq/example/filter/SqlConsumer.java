@@ -35,7 +35,7 @@ public class SqlConsumer {
 		try {
 			consumer.subscribe(Globals.TOPIC_SQL, MessageSelector
 					.bySql("(TAGS is not null and TAGS in ('TagA', 'TagB'))"
-							+ "and (a is not null and a between 0  3)"));
+							+ "and (a is not null and a between 0 and 3)"));
 		} catch (MQClientException e) {
 			e.printStackTrace();
 			return;

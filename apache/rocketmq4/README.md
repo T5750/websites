@@ -18,7 +18,9 @@
 ### 启动
 Cmd命令框执行进入至`MQ文件夹\bin`
 - 启动NAMESERVER: `start mqnamesrv.cmd`
-- 启动BROKER: `start mqbroker.cmd -n 127.0.0.1:9876 autoCreateTopicEnable=true`
+- 启动BROKER:
+	- `start mqbroker.cmd -n 127.0.0.1:9876 autoCreateTopicEnable=true`
+	- `start mqbroker.cmd -n 127.0.0.1:9876 autoCreateTopicEnable=true -c ../conf/broker.conf` (`broker.conf` added: `enablePropertyFilter=true`)
 
 ### Results
 ![rocketmq](http://www.wailian.work/images/2018/06/07/rocketmq-min.png)
