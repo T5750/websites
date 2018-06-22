@@ -4,6 +4,20 @@
 - [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 - [MINA 2.0.7](http://mina.apache.org/mina-project/downloads.html)
 
+## MINA based Application Architecture
+![mina_app_arch](http://www.wailian.work/images/2018/06/22/mina_app_arch.png)
+
+基于MINA的应用被分为三层
+- I/O Service - 执行实际的I/O
+- I/O Filter Chain - 过滤/转换字节到期望的数据结构，反之亦然。
+- I/O Handler - 这里编写实际的业务逻辑。
+
+### Server Architecture
+![Server_arch](http://www.wailian.work/images/2018/06/22/Server_arch.png)
+
+### Client Architecture
+![clientdiagram](http://www.wailian.work/images/2018/06/22/clientdiagram.png)
+
 ## Quick Start Guide
 - `MinaTimeServer`
 - ```telnet 127.0.0.1 9123```

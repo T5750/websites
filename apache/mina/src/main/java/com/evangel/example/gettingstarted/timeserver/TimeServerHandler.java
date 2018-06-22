@@ -1,4 +1,4 @@
-package com.evangel.quickstart;
+package com.evangel.example.gettingstarted.timeserver;
 
 import java.util.Date;
 
