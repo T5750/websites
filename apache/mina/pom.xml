@@ -13,6 +13,8 @@
 	<properties>
 		<mina.version>2.0.7</mina.version>
 		<slf4j.version>1.7.7</slf4j.version>
+		<spring.version>4.2.1.RELEASE</spring.version>
+		<version.jmock>1.2.0</version.jmock>
 	</properties>
 
 	<dependencies>
@@ -30,6 +32,46 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-integration-beans</artifactId>
+			<version>${mina.version}</version>
+			<!--<type>bundle</type>-->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-integration-jmx</artifactId>
+			<version>${mina.version}</version>
+			<!--<type>bundle</type>-->
+		</dependency>
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-statemachine</artifactId>
+			<version>${mina.version}</version>
+			<!--<type>bundle</type>-->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jmock</groupId>
+			<artifactId>jmock</artifactId>
+			<version>${version.jmock}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 </project>

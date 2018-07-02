@@ -3,6 +3,7 @@
 ## Runtime Environment
 - [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
 - [MINA 2.0.7](http://mina.apache.org/mina-project/downloads.html)
+- [Spring Framework 4.2.1.RELEASE](http://projects.spring.io/spring-framework)
 
 ## MINA based Application Architecture
 ![mina_app_arch](http://www.wailian.work/images/2018/06/22/mina_app_arch.png)
@@ -31,3 +32,4 @@ Thu Jun 21 15:47:54 CST 2018 | IDLE 1
 ## Links
 - [Quick Start Guide](http://mina.apache.org/mina-project/quick-start-guide.html)
 - [MINA用户指南](http://www.majunwei.com/category/201707231630518014/)
+- [apache-mina-2.0.7 mina-example](https://github.com/apache/mina/tree/2.0.7)
