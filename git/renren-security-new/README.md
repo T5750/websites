@@ -2,10 +2,10 @@
 
 ## Runtime Environment
 - [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Spring Boot 2.0.1.RELEASE](https://projects.spring.io/spring-boot)
-- [Spring Framework 5.0.5.RELEASE](http://projects.spring.io/spring-framework)
+- [Spring Boot 2.0.3.RELEASE](https://projects.spring.io/spring-boot)
+- [Spring Framework 5.0.7.RELEASE](http://projects.spring.io/spring-framework)
 - [MyBatis 3.4.5](http://www.mybatis.org/mybatis-3/)
-- [Shiro 1.3.2](http://shiro.apache.org/download.html)
+- [Shiro 1.4.0](http://shiro.apache.org/download.html)
 - [Quartz 2.3.0](http://www.quartz-scheduler.org/)
 - [Druid 1.1.9](https://github.com/alibaba/druid)
 - [Redis 2.9.0](https://redis.io)
@@ -73,6 +73,7 @@ renren-security
 ![swagger](http://cdn.renren.io/img/c8dae596146248d8b4d0639738c2932b)
 
 ## Tips
+- Commits on Jun 26, 2018
 - Commits on Apr 25, 2018
 - Modified:
 	- `pom.xml`

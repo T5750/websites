@@ -1,4 +1,4 @@
-package io.renren.common.config;//package io.renren.common.config;
+//package io.renren.common.config;
 //
 //import com.google.gson.Gson;
 //import io.renren.common.utils.R;
