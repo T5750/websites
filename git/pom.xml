@@ -16,6 +16,7 @@
 		<module>jfreechart-dev-guide</module>
 		<module>easyPR</module>
 		<module>renren-security-new</module>
+		<module>renren-fast-new</module>
 	</modules>
 
 </project>
