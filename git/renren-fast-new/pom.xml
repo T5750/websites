@@ -5,7 +5,7 @@
 	<groupId>io.renren</groupId>
 	<artifactId>renren-fast</artifactId>
 	<version>2.1.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<description>renren-fast</description>
 
 	<parent>

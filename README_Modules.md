@@ -10,7 +10,8 @@ websites
 │    ├── smart-new
 │    ├── [v0.2.1] jfreechart-dev-guide
 │    ├── [v0.2.2] easyPR
-│    └── [v0.2.3] renren-security-new
+│    ├── [v0.2.3] renren-security-new
+│    └── [v0.2.4] renren-fast-new
 ├── [v0.3] java1234
 │    └── jfreechart
 ├── [v0.4] yiibai
